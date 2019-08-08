@@ -1,0 +1,25 @@
+<hibernate-configuration>  
+    <session-factory>  
+        <property name="hbm2ddl.auto">update</property>  
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>  
+        <property name="connection.url">jdbc:mysql://localhost:3306/SHOP_SERVLET?useSSL=false</property>  
+        <property name="connection.username">root</property>  
+        <property name="connection.password">password</property>  
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
+    
+    <mapping class = "com.shopping.model.Role"/>
+
+    <!--<mapping resource="/mapping/Order.hbm.xml"/> 
+    <mapping resource="/mapping/OrderDetail.hbm.xml"/> 
+    <mapping resource="/mapping/Cart.hbm.xml"/> 
+    <mapping resource="/mapping/Product.hbm.xml"/>
+    <mapping resource="com/shopping/resources/Role.hbm.xml"/>
+     
+    <mapping class = "model.User"/>     
+    <mapping class = "model.Product"/>
+    <mapping class = "model.Cart"/>
+    <mapping class = "model.Order"/>
+    <mapping class = "model.OrderDetail"/>-->
+
+    </session-factory>  
+</hibernate-configuration>  

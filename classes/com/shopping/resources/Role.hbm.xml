@@ -1,0 +1,12 @@
+<hibernate-mapping>  
+    <class name="com.shopping.model.Role" table="ROLE">  
+        <id name="id" type = "int">  
+            <generator class="native"></generator>  
+        </id>           
+        <property name="name" type = "string" column = "NAME"></property>  
+        <property name="description" type = "string" column = "DESCRIPTION"></property>
+       <!-- <property name="status" type = "boolean" column = "STATUS"></property>
+        <property name="createdDate" type = "string" column = "CREATED_DATE"></property>
+        <property name="updatedDate" type = "string" column = "UPDATED_DATE"></property>  -->
+    </class>              
+</hibernate-mapping> 

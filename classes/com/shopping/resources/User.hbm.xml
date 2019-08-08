@@ -1,0 +1,19 @@
+<hibernate-mapping>  
+    <class name="com.shopping.model.User" table="USER">  
+        <id name="id" type = "int" column = "ID">  
+            <generator class="native"></generator>  
+        </id>           
+        <property name="name" type = "string" column = "NAME"></property>  
+        <property name="password" type = "string" column = "PASSWORD"></property>
+        <property name="email" type = "string" column = "EMAIL"></property>
+        <property name="address" type = "string" column = "ADDRESS"></property>
+        <property name="mobileNumber" type = "string" column = "MOBILE_NUMBER"></property>
+        <property name="status" type = "boolean" column = "STATUS"></property>
+        <property name="createdDate" type = "string" column = "CREATED_DATE"></property>
+        <property name="updatedDate" type = "string" column = "UPDATED_DATE"></property>  
+        <!--<set name = "userRoles" cascade="save-update" table="USER_ROLE">
+            <key column = "USER_ID"/>
+                <many-to-many column = "ROLE_ID" class="com.shopping.model.Role"/>
+        </set>-->
+    </class>              
+</hibernate-mapping>
