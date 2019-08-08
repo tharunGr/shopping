@@ -1,0 +1,267 @@
+<web-app>
+
+    <listener>
+        <listener-class>com.shopping.logger.ContextListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>log4j-config-location</param-name>
+        <param-value>/WEB-INF/classes/com/shopping/resources/log4j.xml</param-value>
+    </context-param>
+
+    <filter>  
+        <filter-name>LoginFilter</filter-name>  
+        <filter-class>com.shopping.filter.LoginFilter</filter-class>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>LoginFilter</filter-name>  
+        <url-pattern>/shop</url-pattern>  
+    </filter-mapping>  
+
+    <filter>  
+        <filter-name>AccessFilter</filter-name>  
+        <filter-class>com.shopping.filter.AccessFilter</filter-class>  
+        <init-param>
+            <param-name>excludedUrls</param-name>
+            <param-value>/display-role,/display-user</param-value>
+        </init-param>
+    </filter>  
+    <filter-mapping>  
+        <filter-name>AccessFilter</filter-name>  
+        <url-pattern>/*</url-pattern>  
+    </filter-mapping>  
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <jsp-file>/shop.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Create Role</servlet-name>
+        <servlet-class>com.shopping.RoleController</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>Save User</servlet-name>
+        <servlet-class>com.shopping.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Create User</servlet-name>
+        <servlet-class>com.shopping.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Create Product</servlet-name>
+        <servlet-class>com.shopping.ProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Create Cart</servlet-name>
+        <servlet-class>com.shopping.CartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Save Cart</servlet-name>
+        <servlet-class>com.shopping.CartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Create Order</servlet-name>
+        <servlet-class>com.shopping.OrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Display Role</servlet-name>
+        <servlet-class>com.shopping.RoleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Display User</servlet-name>
+        <servlet-class>com.shopping.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Display Product</servlet-name>
+        <servlet-class>com.shopping.ProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Display Cart</servlet-name>
+        <servlet-class>com.shopping.CartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Display Order</servlet-name>
+        <servlet-class>com.shopping.OrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete Role</servlet-name>
+        <servlet-class>com.shopping.RoleController</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>Delete User</servlet-name>
+        <servlet-class>com.shopping.UserController</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>Delete Product</servlet-name>
+        <servlet-class>com.shopping.ProductController</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>Delete Cart</servlet-name>
+        <servlet-class>com.shopping.CartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete Order</servlet-name>
+        <servlet-class>com.shopping.OrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Role Form</servlet-name>
+        <servlet-class>com.shopping.RoleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update User Form</servlet-name>
+        <servlet-class>com.shopping.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Product Form</servlet-name>
+        <servlet-class>com.shopping.ProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Cart Form</servlet-name>
+        <servlet-class>com.shopping.CartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Order Form</servlet-name>
+        <servlet-class>com.shopping.OrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Role</servlet-name>
+        <servlet-class>com.shopping.RoleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update User</servlet-name>
+        <servlet-class>com.shopping.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Product</servlet-name>
+        <servlet-class>com.shopping.ProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Cart</servlet-name>
+        <servlet-class>com.shopping.CartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Order</servlet-name>
+        <servlet-class>com.shopping.OrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>com.shopping.userLogout.Logout</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/shop</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Create Role</servlet-name>
+        <url-pattern>/role</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Create User</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>Save User</servlet-name>
+        <url-pattern>/create-user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Create Product</servlet-name>
+        <url-pattern>/product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Create Cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Save Cart</servlet-name>
+        <url-pattern>/create-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Create Order</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Display Role</servlet-name>
+        <url-pattern>/display-role</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Display User</servlet-name>
+        <url-pattern>/display-user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Display Product</servlet-name>
+        <url-pattern>/display-product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Display Cart</servlet-name>
+        <url-pattern>/display-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Display Order</servlet-name>
+        <url-pattern>/display-order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete Role</servlet-name>
+        <url-pattern>/delete-role</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete User</servlet-name>
+        <url-pattern>/delete-user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete Product</servlet-name>
+        <url-pattern>/delete-product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete Cart</servlet-name>
+        <url-pattern>/delete-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete Order</servlet-name>
+        <url-pattern>/delete-order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Role Form</servlet-name>
+        <url-pattern>/show-update-role-form</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>Update User Form</servlet-name>
+        <url-pattern>/show-update-user-form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Product Form</servlet-name>
+        <url-pattern>/show-update-product-form</url-pattern>
+    </servlet-mapping>  
+    <servlet-mapping>
+        <servlet-name>Update Cart Form</servlet-name>
+        <url-pattern>/show-update-cart-form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Order Form</servlet-name>
+        <url-pattern>/show-update-order-form</url-pattern>
+    </servlet-mapping> 
+    <servlet-mapping>
+        <servlet-name>Update Role</servlet-name>
+        <url-pattern>/update-role</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update User</servlet-name>
+        <url-pattern>/update-user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Product</servlet-name>
+        <url-pattern>/update-product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Cart</servlet-name>
+        <url-pattern>/update-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Order</servlet-name>
+        <url-pattern>/update-order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+</web-app>
